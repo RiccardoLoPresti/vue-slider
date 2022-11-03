@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous'/>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="js/script.js" defer></script>
+  <title>objects carousel</title>
+</head>
+<body>
+  
+  <div id="app">
+
+    <div class="container">
+
+      <div class="main-wrapper">
+        
+        <div class="img-wrapper" v-for="(immagine, indice) in immagini">
+  
+          <div class="text" v-for="">
+            <h4>{{immagini.nome}}</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
+  
+          <img class="" src="img/argentina.jpg"  alt="argentina">
+   
+        </div>
+  
+        <div class="thumbnail-wrapper">
+  
+          <div class="thumbnail-img">
+            <img v-for="(immagine, indice) in immagini.pic" :src="immagine" alt="argentina" :class="">
+          </div>
+  
+        </div>
+  
+        <div id="btn-prev"><i class="fa-solid fa-chevron-left"></i></div>
+        <div id="btn-next"><i class="fa-solid fa-chevron-right"></i></div>
+  
+      </div>
+  
+     
+  
+    </div>
+  </div>
+  
+
+</body>
+</html>
