@@ -45,6 +45,18 @@ createApp({
     }
   },
   methods:{
-
+    changeImage(index){
+      this.activeImage = index;
+    },
+    nextPrev(isNext){
+      if(isNext) this.activeImage++
+      else this.activeImage--;
+      console.log(this.activeImage);
+      if(this.activeImage = 5){
+        this.activeImage = 0;
+      }else if(this.activeImage < 0){
+        this.activeImage = 4;
+      }
+    }
   }
 }).mount('#app');

@@ -20,21 +20,28 @@
         
         <div class="img-wrapper">
   
-          <div class="text">
-            <h4>{{immagini[0].nome}}</h4>
-            <p>{{immagini[0].descrizione}}</p>
-          </div>
+          <div class="slider-img">
+            <div class="text">
+              <h4>{{immagini[0].nome}}</h4>
+              <p>{{immagini[0].descrizione}}</p>
+            </div>
   
-          <img class="active" :src="immagini[0].pic"  alt="argentina">
+            <img class="active" :src="immagini[activeImage].pic"  :alt="immagini[activeImage].nome">
+          </div>
+          
    
         </div>
   
         <div class="thumbnail-wrapper">
-          <img v-for="immagine in immagini.pic" :src="immagine" alt="qualsis">
+  
+          <div v-for="(immagine, indice) in immagini" class="thumbnail-img" :class="{'active': indice === activeImage}" @click="changeImage(indice)">
+            <img  :src="immagine.pic" :alt="immagine.pic" >
+          </div>
+  
         </div>
   
-        <div id="btn-prev"><i class="fa-solid fa-chevron-left"></i></div>
-        <div id="btn-next"><i class="fa-solid fa-chevron-right"></i></div>
+        <div @click="nextPrev(false)" id="btn-prev"><i class="fa-solid fa-chevron-left"></i></div>
+        <div @click="nextPrev(true)" id="btn-next"><i class="fa-solid fa-chevron-right"></i></div>
   
       </div>
   
