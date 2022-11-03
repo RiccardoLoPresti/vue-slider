@@ -18,21 +18,21 @@
 
       <div class="main-wrapper">
         
-        <div class="img-wrapper" v-for="(immagine, indice) in immagini">
+        <div class="img-wrapper">
   
-          <div class="text" v-for="">
-            <h4>{{immagini.nome}}</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          <div class="text">
+            <h4>{{immagini[0].nome}}</h4>
+            <p>{{immagini[0].descrizione}}</p>
           </div>
   
-          <img class="" src="img/argentina.jpg"  alt="argentina">
+          <img class="active" :src="immagini[0].pic"  alt="argentina">
    
         </div>
   
         <div class="thumbnail-wrapper">
   
           <div class="thumbnail-img">
-            <img v-for="(immagine, indice) in immagini.pic" :src="immagine" alt="argentina" :class="">
+            <img :src="immagini[0].pic" alt="immagine">
           </div>
   
         </div>
@@ -45,6 +45,7 @@
      
   
     </div>
+
   </div>
   
 

@@ -84,7 +84,7 @@ img{
 }
 
 .img-wrapper img{
-  display: none;
+  /* display: none; */
 }
 
 .img-wrapper img.active{

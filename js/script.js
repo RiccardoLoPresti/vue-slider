@@ -41,7 +41,7 @@ createApp({
           pic: "svezia.jpg"
         }
       ],
-      activeImmage: 0
+      activeImage: 0
     }
   },
   methods:{
