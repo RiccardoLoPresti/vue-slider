@@ -5,10 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous'/>
+
   <link rel="stylesheet" href="css/style.css">
+
   <script src="https://unpkg.com/vue@3"></script>
+
   <script src="js/script.js" defer></script>
-  <title>objects carousel</title>
+
+  <title>Vue carousel</title>
 </head>
 <body>
   
@@ -16,20 +20,19 @@
 
     <div class="container">
 
-      <div class="main-wrapper">
+      <div class="main-wrapper" @mouseover="stopAutoPlay(true)" @mouseleave="autoPlay()">
         
         <div class="img-wrapper">
-  
+
           <div class="slider-img">
             <div class="text">
-              <h4>{{immagini[0].nome}}</h4>
-              <p>{{immagini[0].descrizione}}</p>
+              <h4>{{immagini[activeImage].nome}}</h4>
+              <p>{{immagini[activeImage].descrizione}}</p>
             </div>
   
             <img class="active" :src="immagini[activeImage].pic"  :alt="immagini[activeImage].nome">
           </div>
           
-   
         </div>
   
         <div class="thumbnail-wrapper">
@@ -44,13 +47,10 @@
         <div @click="nextPrev(true)" id="btn-next"><i class="fa-solid fa-chevron-right"></i></div>
   
       </div>
-  
-     
-  
+
     </div>
 
   </div>
   
-
 </body>
 </html>
