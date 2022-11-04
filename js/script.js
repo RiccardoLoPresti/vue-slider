@@ -42,10 +42,10 @@ createApp({
     nextPrev(isNext){
       isNext ? this.activeImage++ : this.activeImage--;
 
-      if(this.activeImage === 5){
+      if(this.activeImage === this.immagini.length){
         this.activeImage = 0;
       }else if(this.activeImage < 0){
-        this.activeImage = 4;
+        this.activeImage = this.immagini.length - 1;
       }
     },
     autoPlay(isNext,isOver){
